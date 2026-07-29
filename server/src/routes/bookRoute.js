@@ -1,12 +1,13 @@
 import express from "express"
 import protectRoute from "../middleware/auth.middleware"
+import Book from "../models/Book.js"
 const router = express.Router()
 
-router.get("/", (req, res) => {   
+router.get("/", async(req, res) => {   
     try{
         const {limit, page} = req.query
-        const limit = parseInt(limit) || 10
-        const page = parseInt(page) || 1
+        limit = parseInt(limit) || 10
+        page = parseInt(page) || 1
         const offset = (page - 1) * limit
         
         const books = await Book.find()
