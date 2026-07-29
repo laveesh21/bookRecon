@@ -3,7 +3,7 @@ import express from "express"
 import cors from "cors"
 import connectDb from "./config/db.js"
 import authRoute from "./routes/authRoute.js"
-import bookRoute from "./routes//bookRoute.js"
+import bookRoute from "./routes/bookRoute.js"
 
 const app = express()
 const PORT = process.env.PORT || 3000

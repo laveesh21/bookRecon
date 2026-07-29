@@ -13,3 +13,5 @@ const verifyToken = async (req, res, next) => {
         return res.status(401).json({error: error.message})
     }
 }
+
+export default verifyToken
