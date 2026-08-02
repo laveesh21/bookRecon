@@ -12,7 +12,6 @@ const generateToken = (userId) => {
 // New User Register
 router.post("/register", async (req, res) => {
   try{
-
     const {email, username, password } = req.body
 
     if(!username || !password || !email){
@@ -46,6 +45,8 @@ router.post("/register", async (req, res) => {
     await user.save()
 
     const token = generateToken(user._id)
+
+    console.log("User registered successfully:", { user, token });
 
     res.status(200).json({
       token,
