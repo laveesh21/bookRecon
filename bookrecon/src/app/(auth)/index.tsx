@@ -10,9 +10,8 @@ import { useAuthStore } from "../../store/authStore.js"
 export default function Login() {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const { user, isLoading, login } = useAuthStore();
+  const { isLoading, login, isCheckingAuth } = useAuthStore();
 
   const handleLogin = async () => {
     if (!email || !password) {
@@ -23,6 +22,10 @@ export default function Login() {
     if(!result.success) Alert.alert("Error", result.error)  
   };
 
+  if (isCheckingAuth) {
+    return null;
+  }
+  
   return (
 
     <KeyboardAvoidingView
@@ -32,10 +35,10 @@ export default function Login() {
 
     <View style={styles.container}>
       <View style={styles.topIllustration}>
-        {/* <Image
+        <Image
           source={require("../../../assets/login_asset.png")}
           style={styles.illustrationImage}
-        /> */}
+        />
       </View>
       <View style={styles.card}>
         <View style={styles.formContainer}>
