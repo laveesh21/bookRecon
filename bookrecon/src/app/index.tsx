@@ -6,6 +6,7 @@ export default function Index() {
   return (
     <View style={styles.container}>
       <Text>This is my main screeen</Text>
+
       <Link href="/(auth)">Login</Link>
       <Link href="/(auth)/signup">Signup</Link>
    </View>

@@ -79,11 +79,7 @@ router.post("/", protectRoute, async (req, res) => {
       user: req.user.userId,
     });
 
-    console.log("BOOK===>", newBook)
-
     await newBook.save();
-
-    console.log("BOOK SAVED ----------------------------------")
 
     res.status(201).json(newBook);
   } catch (error) {

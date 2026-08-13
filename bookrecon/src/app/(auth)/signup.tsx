@@ -10,10 +10,10 @@ import {
 } from "react-native";
 import styles from "../../../assets/styles/signup.styles";
 import { Image } from "expo-image";
-import COLORS from "../../../constants/colors";
+import COLORS from "../../constants/colors";
 import { Ionicons } from "@react-native-vector-icons/ionicons";
 import {  useRouter } from "expo-router";
-import { useAuthStore } from "../../../store/authStore.js"
+import { useAuthStore } from "../../store/authStore"
 import { Alert } from "react-native";
 
 export default function Signup() {

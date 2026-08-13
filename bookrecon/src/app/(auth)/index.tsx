@@ -2,11 +2,10 @@ import { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, ActivityIndicator, KeyboardAvoidingView, Platform, Alert } from "react-native";
 import styles from "../../../assets/styles/login.styles";
 import { Image } from "expo-image";
-import COLORS from "../../../constants/colors";
+import COLORS from "../../constants/colors";
 import { Ionicons } from "@react-native-vector-icons/ionicons";
 import { Link } from "expo-router";
-
-import { useAuthStore } from "../../../store/authStore.js"
+import { useAuthStore } from "../../store/authStore.js"
 
 export default function Login() {
   const [password, setPassword] = useState("");
@@ -33,10 +32,10 @@ export default function Login() {
 
     <View style={styles.container}>
       <View style={styles.topIllustration}>
-        <Image
+        {/* <Image
           source={require("../../../assets/login_asset.png")}
           style={styles.illustrationImage}
-        />
+        /> */}
       </View>
       <View style={styles.card}>
         <View style={styles.formContainer}>
